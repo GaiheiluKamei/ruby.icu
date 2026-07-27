@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="dormant" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#B8A890"/>
+      <stop offset="100%" stop-color="#A09075"/>
+    </linearGradient>
+    <linearGradient id="vital" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5548"/>
+      <stop offset="42%" stop-color="#E52B1E"/>
+      <stop offset="100%" stop-color="#7A0800"/>
+    </linearGradient>
+    <radialGradient id="spark" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="20%" stop-color="#FFF5E8" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#FFC888" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#E87830" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Gem + ECG, no circle, scaled up -->
+  <g transform="translate(16, 15) scale(0.11) translate(-200, -200)">
+    <g transform="translate(200, 216) scale(10.5) translate(-12, -12.5)">
+      <path d="M6 3 h6 L12 22 L2 9 Z" fill="url(#dormant)"/>
+      <path d="M12 3 h6 l4 6 -10 13 Z" fill="url(#vital)"/>
+      <path d="M6 3 L18 3 L22 9 L12 22 L2 9 Z" fill="none" stroke="#FFFFFF" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.18"/>
+      <path d="M12 3 L9 9 L12 22 L15 9 Z" fill="none" stroke="#FFFFFF" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.22"/>
+      <line x1="2" y1="9" x2="22" y2="9" stroke="#FFFFFF" stroke-width="0.8" opacity="0.14"/>
+      <circle cx="12" cy="9" r="5" fill="url(#spark)" filter="url(#glow)" opacity="0.7"/>
+      <circle cx="12" cy="9" r="2.5" fill="url(#spark)" filter="url(#glow)" opacity="0.9"/>
+      <circle cx="12" cy="9" r="0.8" fill="white" opacity="0.98"/>
+    </g>
+    <path d="M30 179 H65 L73 170 L81 188 L89 179 H200" fill="none" stroke="url(#dormant)" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+    <path d="M200 179 L212 90 L226 280 L240 170 L254 220 L266 179 H310 L322 155 L334 210 L346 179 H370" fill="none" stroke="url(#vital)" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
+  </g>
+</svg>
